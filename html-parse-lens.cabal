@@ -1,0 +1,38 @@
+cabal-version:      3.0
+name:               html-parse-lens
+version:            0.1
+-- synopsis:
+-- description:
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Alp Mestanogullari
+maintainer:         alpmestan@gmail.com
+-- copyright:
+category:           Web
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  Text.HTML.Tree.Lens
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base, containers, text, bytestring, lens, html-parse, unordered-containers
+    hs-source-dirs:   src
+    default-language: GHC2021
+
+test-suite html-parse-lens-test
+    import:           warnings
+    default-language: GHC2021
+    -- other-modules:
+    -- other-extensions:
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Main.hs
+    build-depends:
+        base,
+        html-parse-lens
